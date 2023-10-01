@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="TypingExercises.KeyboardView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TypingExercises"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+	
+	<Viewbox MinWidth="{x:Bind grid.MinWidth}" MinHeight="{x:Bind grid.MinHeight}"
+             MaxWidth="{x:Bind grid.MaxWidth}" MaxHeight="{x:Bind grid.MaxHeight}" >
+		<Grid x:Name="grid"
+			  MinWidth="580" MinHeight="160"
+              MaxWidth="1160" MaxHeight="320"
+			  Width="29" Height="8" />
+	</Viewbox>
+</UserControl>

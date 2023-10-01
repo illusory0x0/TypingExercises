@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "TypingExercises (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "TypingExercises (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

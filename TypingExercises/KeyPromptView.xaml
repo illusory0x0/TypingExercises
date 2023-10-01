@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="TypingExercises.KeyPromptView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TypingExercises"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid MinHeight="180">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="7*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border HorizontalAlignment="Left" VerticalAlignment="Top"
+            Width="60" Height="60"
+	        BorderBrush="{ThemeResource TextBoxBorderThemeBrush}"
+            BorderThickness="1"
+	        Grid.Row="1" Grid.Column="1">
+            <TextBlock
+                    HorizontalAlignment="Center" VerticalAlignment="Center"
+	        	    Margin="{StaticResource GeneralMargin}" 
+	        	    Text="{x:Bind PromptText,Mode=OneWay}"
+                    Foreground="{StaticResource NipponYanagisomeBrush}"
+	        	    FontSize="20"/>
+        </Border>
+    </Grid>
+</UserControl>
