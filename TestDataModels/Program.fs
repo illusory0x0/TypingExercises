@@ -1,4 +1,4 @@
-﻿open TypingExercises.DataModels
+﻿open TypingPractice.DataModels
 open Utils.Collections
 open Utils.Funtor
 

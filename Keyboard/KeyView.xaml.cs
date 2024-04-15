@@ -5,7 +5,7 @@ using System;
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace TypingExercises;
+namespace Keyboard;
 
 public sealed partial class KeyView : UserControl
 {
@@ -17,7 +17,7 @@ public sealed partial class KeyView : UserControl
 	{
 		this.InitializeComponent();
 		this.KeyText = keyText;
-		border.Child = KeyText switch
+		this.border.Child = this.KeyText switch
 		{
 			string str => new LetterKeyView(str),
 			char ch => new LetterKeyView(ch.ToString()),
@@ -27,8 +27,8 @@ public sealed partial class KeyView : UserControl
 	}
 	public object KeyText
 	{
-		get { return GetValue(KeyTextProperty); }
-		set { SetValue(KeyTextProperty, value); }
+		get => this.GetValue(KeyTextProperty);
+		set => this.SetValue(KeyTextProperty, value);
 	}
 	public static readonly DependencyProperty KeyTextProperty =
 		DependencyProperty.Register("KeyText", typeof(object), typeof(KeyView), new PropertyMetadata(0));

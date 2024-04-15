@@ -1,9 +1,9 @@
 {
   "profiles": {
-    "TypingExercises (Package)": {
+    "TypingPractice (Package)": {
       "commandName": "MsixPackage"
     },
-    "TypingExercises (Unpackaged)": {
+    "TypingPractice (Unpackaged)": {
       "commandName": "Project"
     }
   }

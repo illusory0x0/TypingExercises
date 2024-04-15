@@ -2,9 +2,9 @@ using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media;
 using System;
-using static TypingExercises.DataModels;
+using static TypingPractice.DataModels;
 
-namespace TypingExercises;
+namespace Keyboard;
 public static partial class Exstension
 {
 	public static void SetCenterAlign(this FrameworkElement element)
@@ -12,7 +12,7 @@ public static partial class Exstension
 		element.HorizontalAlignment = HorizontalAlignment.Center;
 		element.VerticalAlignment = VerticalAlignment.Center;
 	}
-	public static void SetGridPostion(this FrameworkElement element, int row, int rowSpan, int column, int columnSpan)
+	public static void SetGridPosition(this FrameworkElement element, int row, int rowSpan, int column, int columnSpan)
 	{
 		Grid.SetRow(element, row);
 		Grid.SetRowSpan(element, rowSpan);
@@ -25,7 +25,7 @@ public sealed partial class KeyboardView : UserControl
 	public KeyboardView()
 	{
 		this.InitializeComponent();
-		SetGridRowColumn(grid, 8, 29);
+		SetGridRowColumn(this.grid, 8, 29);
 
 		foreach (var row in KeyboardModel)
 		{
@@ -33,8 +33,8 @@ public sealed partial class KeyboardView : UserControl
 			{
 				(var text, var rowIndex, var colIndex, var colspan) = key;
 				FrameworkElement keyView = new KeyView(text);
-				keyView.SetGridPostion(rowIndex, 2, colIndex, colspan);
-				grid.Children.Add(keyView);
+				keyView.SetGridPosition(rowIndex, 2, colIndex, colspan);
+				this.grid.Children.Add(keyView);
 			}
 		}
 	}
@@ -53,8 +53,8 @@ public sealed partial class KeyboardView : UserControl
 	#region KeyPromptBrushProperty
 	public Brush KeyPromptBrush
 	{
-		get { return (Brush)GetValue(KeyPromptBrushProperty); }
-		set { SetValue(KeyPromptBrushProperty, value); }
+		get => (Brush)this.GetValue(KeyPromptBrushProperty);
+		set => this.SetValue(KeyPromptBrushProperty, value);
 	}
 
 	public static readonly DependencyProperty KeyPromptBrushProperty =
@@ -75,8 +75,8 @@ public sealed partial class KeyboardView : UserControl
 	#region KeyPromptProperty
 	public char KeyPrompt
 	{
-		get { return (char)GetValue(KeyPromptProperty); }
-		set { SetValue(KeyPromptProperty, value); }
+		get => (char)this.GetValue(KeyPromptProperty);
+		set => this.SetValue(KeyPromptProperty, value);
 	}
 
 	public static readonly DependencyProperty KeyPromptProperty =
@@ -96,7 +96,7 @@ public sealed partial class KeyboardView : UserControl
 	{
 		if (key != ' ')
 		{
-			var keyviews = grid.Children;
+			var keyviews = this.grid.Children;
 			var keyview = (KeyView)keyviews[KeyboardMap[key]];
 			keyview.Background = brush;
 		}

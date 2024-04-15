@@ -1,9 +1,6 @@
 using Microsoft.UI.Xaml;
-using Microsoft.UI.Xaml.Controls;
-using System;
-using System.Linq;
 
-namespace TypingExercises;
+namespace TypingPractice;
 
 /// <summary>
 /// An empty window that can be used on its own or navigated to within a Frame.

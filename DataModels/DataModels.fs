@@ -1,4 +1,4 @@
-﻿module TypingExercises.DataModels
+﻿module TypingPractice.DataModels
 open Utils.Collections
 open Utils.Funtor
 open System;
@@ -46,12 +46,12 @@ module internal impl =
     
     let gridItemSpan (x:obj) span = if x :? string then span else 2
     
-    let gridSpans = 
+    let gridColumnSpans = 
         [| for pairs in Seq.zip EnglishKeyboard itemSpan do
                 let items,span = pairs
                 [|for item in items do yield gridItemSpan item span|] 
         |]
-    let gridColumnIndexes = gridSpans |> Seq.map (Seq.scan (+) 0)
+    let gridColumnIndexes = gridColumnSpans |> Seq.map (Seq.scan (+) 0)
 
     let gridRowIndexs = 
         Seq.zip (EnglishKeyboard |> Seq.map Seq.length) [|0..EnglishKeyboard |> Seq.length|]  
@@ -59,7 +59,7 @@ module internal impl =
     let zip4_2D  a b c d = zip4 a b c d |> Seq.map (fun (a,b,c,d) -> zip4 a b c d)
 
 
-    let keyboardModel = zip4_2D   EnglishKeyboard gridRowIndexs gridColumnIndexes gridSpans
+    let keyboardModel = zip4_2D   EnglishKeyboard gridRowIndexs gridColumnIndexes gridColumnSpans
 
 
     let keys = EnglishKeyboard |> Seq.concat

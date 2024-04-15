@@ -4,7 +4,7 @@ using Microsoft.UI.Xaml.Controls;
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace TypingExercises;
+namespace Keyboard;
 public sealed partial class LetterKeyView : UserControl
 {
 	public LetterKeyView()
@@ -19,8 +19,8 @@ public sealed partial class LetterKeyView : UserControl
 
 	public string Text
 	{
-		get { return (string)GetValue(TextProperty); }
-		set { SetValue(TextProperty, value); }
+		get => (string)this.GetValue(TextProperty);
+		set => this.SetValue(TextProperty, value);
 	}
 
 	// Using a DependencyProperty as the backing store for Text.  This enables animation, styling, binding, etc...
